@@ -13,3 +13,8 @@ target/
 
 # OS
 .DS_Store
+
+# Word
+~$*
+/*.docx
+*.code-workspace
