@@ -1,0 +1,114 @@
+{
+  "comment": "Условные данные для проверки алгоритмов (учебный пример)",
+  "zone_coefficients": {
+    "office": 1.0,
+    "sanitary": 1.5,
+    "hall": 0.8
+  },
+  "services": [
+    {
+      "code": "DAILY",
+      "name": "Поддерживающая уборка",
+      "rate": 18.0,
+      "minutes_per_100m2": 25,
+      "periodicity": "daily"
+    },
+    {
+      "code": "WINDOWS",
+      "name": "Мытьё окон и остекления",
+      "rate": 45.0,
+      "minutes_per_100m2": 20,
+      "periodicity": "weekly"
+    },
+    {
+      "code": "GENERAL",
+      "name": "Генеральная уборка",
+      "rate": 95.0,
+      "minutes_per_100m2": 30,
+      "periodicity": "monthly"
+    }
+  ],
+  "objects": [
+    {
+      "id": 1,
+      "client": "ООО «Альфа-Офис»",
+      "address": "ул. Профсоюзная, 12",
+      "zones": [
+        {
+          "type": "office",
+          "area": 850
+        },
+        {
+          "type": "sanitary",
+          "area": 60
+        },
+        {
+          "type": "hall",
+          "area": 140
+        }
+      ],
+      "services": [
+        "DAILY",
+        "WINDOWS",
+        "GENERAL"
+      ]
+    },
+    {
+      "id": 2,
+      "client": "АО «Бета Групп»",
+      "address": "пр-т Вернадского, 78",
+      "zones": [
+        {
+          "type": "office",
+          "area": 1200
+        },
+        {
+          "type": "sanitary",
+          "area": 90
+        },
+        {
+          "type": "hall",
+          "area": 210
+        }
+      ],
+      "services": [
+        "DAILY",
+        "GENERAL"
+      ]
+    },
+    {
+      "id": 3,
+      "client": "ООО «Гамма Консалт»",
+      "address": "ул. Стромынка, 20",
+      "zones": [
+        {
+          "type": "office",
+          "area": 420
+        },
+        {
+          "type": "sanitary",
+          "area": 35
+        }
+      ],
+      "services": [
+        "DAILY",
+        "WINDOWS"
+      ]
+    }
+  ],
+  "brigades": [
+    {
+      "id": 1,
+      "name": "Бригада 1",
+      "capacity_hours": 8
+    },
+    {
+      "id": 2,
+      "name": "Бригада 2",
+      "capacity_hours": 8
+    }
+  ],
+  "holidays": [
+    "2026-11-04"
+  ]
+}
