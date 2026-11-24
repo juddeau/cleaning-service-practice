@@ -1,0 +1,13 @@
+SQLite 3.53.1
+acts 0
+brigades 2
+clients 3
+contract_services 7
+contracts 3
+employees 0
+offices 3
+services 3
+tasks 68
+zones 8
+status [('assigned', 65), ('unassigned', 3)]
+integrity_check: ok; foreign_key_check: []

@@ -1,0 +1,76 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Страница-1" id="7VeE1w1EoGDqgS-tmTJq">
+    <mxGraphModel dx="785" dy="515" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="calendar" parent="1" style="swimlane;html=1;startSize=54;horizontal=1;rounded=0;collapsible=0;fontFamily=Arial;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;fillColor=#ffffff;swimlaneFillColor=#ffffff;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;CalendarPolicy" vertex="1">
+          <mxGeometry height="90" width="290" x="310" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="calendarbody" parent="calendar" style="text;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacing=8;fontFamily=Arial;fontSize=16;fontColor=#000000;" value="+ dates(month, holidays)" vertex="1">
+          <mxGeometry height="36" width="290" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="service" parent="1" style="swimlane;html=1;startSize=54;horizontal=1;rounded=0;collapsible=0;fontFamily=Arial;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;fillColor=#ffffff;swimlaneFillColor=#ffffff;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" value="&amp;lt;&amp;lt;abstract&amp;gt;&amp;gt;&lt;br&gt;CleaningService" vertex="1">
+          <mxGeometry height="145" width="340" x="285" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="servicebody" parent="service" style="text;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacing=8;fontFamily=Arial;fontSize=16;fontColor=#000000;" value="− code, rate, minutes&lt;br&gt;+ dates(...), duration(office)&lt;br&gt;# accepts(date)" vertex="1">
+          <mxGeometry height="91" width="340" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="daily" parent="1" style="swimlane;html=1;startSize=34;horizontal=1;rounded=0;collapsible=0;fontFamily=Arial;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;fillColor=#ffffff;swimlaneFillColor=#ffffff;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" value="DailyService" vertex="1">
+          <mxGeometry height="76" width="270" x="10" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="dailybody" parent="daily" style="text;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacing=8;fontFamily=Arial;fontSize=16;fontColor=#000000;" value="# accepts(date): Пн–Пт" vertex="1">
+          <mxGeometry height="42" width="270" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="weekly" parent="1" style="swimlane;html=1;startSize=34;horizontal=1;rounded=0;collapsible=0;fontFamily=Arial;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;fillColor=#ffffff;swimlaneFillColor=#ffffff;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" value="WeeklyService" vertex="1">
+          <mxGeometry height="76" width="270" x="320" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="weeklybody" parent="weekly" style="text;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacing=8;fontFamily=Arial;fontSize=16;fontColor=#000000;" value="# accepts(date): среда" vertex="1">
+          <mxGeometry height="42" width="270" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="monthly" parent="1" style="swimlane;html=1;startSize=34;horizontal=1;rounded=0;collapsible=0;fontFamily=Arial;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;fillColor=#ffffff;swimlaneFillColor=#ffffff;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" value="MonthlyService" vertex="1">
+          <mxGeometry height="94" width="270" x="630" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="monthlybody" parent="monthly" style="text;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacing=8;fontFamily=Arial;fontSize=16;fontColor=#000000;" value="# accepts(date): суббота&lt;br&gt;# firstOnly(): true" vertex="1">
+          <mxGeometry height="60" width="270" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="planner" parent="1" style="swimlane;html=1;startSize=34;horizontal=1;rounded=0;collapsible=0;fontFamily=Arial;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;fillColor=#ffffff;swimlaneFillColor=#ffffff;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" value="Planner" vertex="1">
+          <mxGeometry height="110" width="390" x="10" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="plannerbody" parent="planner" style="text;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacing=8;fontFamily=Arial;fontSize=16;fontColor=#000000;" value="− strategy: AssignmentStrategy&lt;br&gt;+ build(...), cost(...), assign(...)" vertex="1">
+          <mxGeometry height="76" width="390" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="strategy" parent="1" style="swimlane;html=1;startSize=54;horizontal=1;rounded=0;collapsible=0;fontFamily=Arial;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;fillColor=#ffffff;swimlaneFillColor=#ffffff;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;AssignmentStrategy" vertex="1">
+          <mxGeometry height="90" width="360" x="540" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="strategybody" parent="strategy" style="text;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacing=8;fontFamily=Arial;fontSize=16;fontColor=#000000;" value="+ assign(tasks, brigades): Plan" vertex="1">
+          <mxGeometry height="36" width="360" y="54" as="geometry" />
+        </mxCell>
+        <mxCell id="greedy" parent="1" style="swimlane;html=1;startSize=34;horizontal=1;rounded=0;collapsible=0;fontFamily=Arial;fontSize=18;fontStyle=1;align=center;verticalAlign=middle;fillColor=#ffffff;swimlaneFillColor=#ffffff;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" value="GreedyAssignment" vertex="1">
+          <mxGeometry height="95" width="360" x="540" y="665" as="geometry" />
+        </mxCell>
+        <mxCell id="greedybody" parent="greedy" style="text;html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacing=8;fontFamily=Arial;fontSize=16;fontColor=#000000;" value="+ assign(...): Plan&lt;br&gt;PriorityQueue&amp;lt;Load&amp;gt;" vertex="1">
+          <mxGeometry height="61" width="360" y="34" as="geometry" />
+        </mxCell>
+        <mxCell id="implCalendar" edge="1" parent="1" source="service" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;dashed=1;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" target="calendar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inherits0" edge="1" parent="1" source="daily" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;dashed=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=0;entryX=0.2;entryY=1;" target="service">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inherits1" edge="1" parent="1" source="weekly" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;dashed=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" target="service">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inherits2" edge="1" parent="1" source="monthly" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;dashed=0;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=0;entryX=0.8;entryY=1;" target="service">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="usesStrategy" edge="1" parent="1" source="planner" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;endFill=0;dashed=0;strokeWidth=1.5;strokeColor=#000000;exitX=1;exitY=.5;entryX=0;entryY=.5;" target="strategy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="implStrategy" edge="1" parent="1" source="greedy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;dashed=1;strokeWidth=1.5;strokeColor=#000000;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" target="strategy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

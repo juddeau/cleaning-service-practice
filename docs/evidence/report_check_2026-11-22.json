@@ -1,0 +1,23 @@
+{
+  "pages_before": 61,
+  "pages_after": 58,
+  "figures": 13,
+  "tables": 11,
+  "formulas": 2,
+  "sources": 15,
+  "appendices": 5,
+  "tests_passed": 34,
+  "official_form_pages_unchanged": 5,
+  "old_media_bytes_unchanged": 13,
+  "main_text_font": "Times New Roman 14",
+  "line_spacing": 1.5,
+  "margins_mm": [
+    30,
+    15,
+    20,
+    20
+  ],
+  "new_chapters_word_reduction_pct": 33.4,
+  "new_images": "actual draw.io and VS Code screenshots; cropped without mouse pointer",
+  "sha256": "84b2407f04bd56abe297b3e9e8d5dfbebefdea2366d8e22b8d3a0e2979516ad0"
+}

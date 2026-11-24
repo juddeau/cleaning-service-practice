@@ -1,0 +1,18 @@
+Проверка проекта 24 ноября 2026 года
+
+Команда: python3 -B -m unittest discover -s tests -v
+Проверка выполнена в отдельной копии с неизменёнными исходниками.
+Ran 34 tests in 1.026s
+OK
+
+15 проверок алгоритмов Python, 6 сравнений Python и Java, 13 проверок SQLite.
+Сравнительные тесты самостоятельно собирают Java.
+
+SHA-256 проверенных файлов:
+626516a9677e1e996fb303c567aa6826c3862bd27917113410df2abdeac57e65  src/algorithms.py
+b12e7c89a9ebd418fdc93e4f9e8a231fbe06cc15fea1376955df99291b1fe5d0  src/main.py
+17d79c88cbf0546541032d538c91f5f2845b0b22f27d63bbc92ecc069a4c239c  java/src/cleaning/CleaningApp.java
+24d1819d351e2805648e1ad27aa674cad17582b94cfdf640deb674b813a42194  java/src/cleaning/Json.java
+b19f773339efc5cb6c40c82fdfafd5c947a7267b5f9bb94e6970f457fa9ae72a  sql/schema.sql
+a22291fbaa30f373e40e56bf725fd8de9a22285cef48a65051e162d3809e42b3  tools/build_database.py
+a38f68753261664e5711726816745a181c0ad923a4ab82609b0ae5079ec62a2f  tests/test_practice.py

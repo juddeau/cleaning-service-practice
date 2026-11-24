@@ -21,3 +21,11 @@ target/
 
 # Отчёты лежат рядом с проектом, а не в репозитории
 docs/*.docx
+
+# Reproducible build artifacts
+java/build/
+.venv/
+*.tmp.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm

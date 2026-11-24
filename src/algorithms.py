@@ -35,6 +35,8 @@ def calc_monthly_cost(obj, services, coefficients, visits):
 
 def service_dates(periodicity, year, month, holidays):
     """Даты выполнения услуги в месяце по её периодичности."""
+    if periodicity not in {"daily", "weekly", "monthly"}:
+        raise ValueError("Неизвестная периодичность")
     days_in_month = calendar.monthrange(year, month)[1]
     result = []
     for day in range(1, days_in_month + 1):
@@ -74,36 +76,38 @@ def build_schedule(objects, services, year, month, holidays):
 def assign_tasks(tasks, brigades):
     """Алгоритм 3. Распределение заданий между бригадами.
 
-    Для каждого дня задание получает бригада с наименьшей текущей
-    загрузкой (минимальная куча). Если даже у неё не хватает
-    времени смены, задание попадает в список нераспределённых.
+    Задание получает наименее загруженная из подходящих бригад.
+    Если смены различаются, проверяются следующие элементы кучи.
+    Загрузки считаются в сотых долях часа без ошибок сложения float.
     """
-    assigned = []
-    unassigned = []
-    heap = []
-    current_day = None
-    for task in tasks:
+    capacity = {b["id"]: b["capacity_hours"] for b in brigades}
+    if len(capacity) != len(brigades):
+        raise ValueError("Идентификаторы бригад должны быть уникальными")
+    if any(c < 0 for c in capacity.values()):
+        raise ValueError("Длительность смены не может быть отрицательной")
+    assigned, unassigned = [], []
+    heap, current_day = [], None
+    for task in sorted(tasks, key=lambda t: (t["date"], -t["hours"])):
+        if task["hours"] < 0:
+            raise ValueError("Длительность задания не может быть отрицательной")
         if task["date"] != current_day:
             current_day = task["date"]
-            heap = [(0.0, b["id"]) for b in brigades]
+            heap = [(0, bid) for bid in capacity]
             heapq.heapify(heap)
-        load, brigade_id = heapq.heappop(heap)
-        capacity = brigade_capacity(brigades, brigade_id)
-        if load + task["hours"] <= capacity:
-            assigned.append(dict(task, brigade_id=brigade_id))
-            load += task["hours"]
+        hours = round(task["hours"] * 100)
+        skipped = []
+        while heap:
+            load, brigade_id = heapq.heappop(heap)
+            if load + hours <= round(capacity[brigade_id] * 100):
+                assigned.append(dict(task, brigade_id=brigade_id))
+                heapq.heappush(heap, (load + hours, brigade_id))
+                break
+            skipped.append((load, brigade_id))
         else:
             unassigned.append(task)
-        heapq.heappush(heap, (load, brigade_id))
+        for item in skipped:
+            heapq.heappush(heap, item)
     return assigned, unassigned
-
-
-def brigade_capacity(brigades, brigade_id):
-    """Продолжительность смены бригады, ч."""
-    for b in brigades:
-        if b["id"] == brigade_id:
-            return b["capacity_hours"]
-    return 0
 
 
 def count_visits(tasks, object_id):

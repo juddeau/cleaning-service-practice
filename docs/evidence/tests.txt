@@ -1,0 +1,39 @@
+test_control (test_practice.Algorithms.test_control) ... ok
+test_day_reset (test_practice.Algorithms.test_day_reset) ... ok
+test_duplicate_id (test_practice.Algorithms.test_duplicate_id) ... ok
+test_empty_brigades (test_practice.Algorithms.test_empty_brigades) ... ok
+test_empty_tasks (test_practice.Algorithms.test_empty_tasks) ... ok
+test_exact_capacity (test_practice.Algorithms.test_exact_capacity) ... ok
+test_first_available_saturday (test_practice.Algorithms.test_first_available_saturday) ... ok
+test_heterogeneous_shifts (test_practice.Algorithms.test_heterogeneous_shifts) ... ok
+test_holiday (test_practice.Algorithms.test_holiday) ... ok
+test_leap_year (test_practice.Algorithms.test_leap_year) ... ok
+test_negative_capacity (test_practice.Algorithms.test_negative_capacity) ... ok
+test_negative_task (test_practice.Algorithms.test_negative_task) ... ok
+test_over_capacity (test_practice.Algorithms.test_over_capacity) ... ok
+test_tie (test_practice.Algorithms.test_tie) ... ok
+test_unknown_periodicity (test_practice.Algorithms.test_unknown_periodicity) ... ok
+test_different_shifts (test_practice.CrossLanguage.test_different_shifts) ... ok
+test_excluded_saturday (test_practice.CrossLanguage.test_excluded_saturday) ... ok
+test_leap_month (test_practice.CrossLanguage.test_leap_month) ... ok
+test_no_brigades (test_practice.CrossLanguage.test_no_brigades) ... ok
+test_no_objects (test_practice.CrossLanguage.test_no_objects) ... ok
+test_shared_fixture (test_practice.CrossLanguage.test_shared_fixture) ... ok
+test_all_tasks_preserved (test_practice.Database.test_all_tasks_preserved) ... ok
+test_capacity_update (test_practice.Database.test_capacity_update) ... ok
+test_contract_update (test_practice.Database.test_contract_update) ... ok
+test_duplicate_task (test_practice.Database.test_duplicate_task) ... ok
+test_foreign_key (test_practice.Database.test_foreign_key) ... ok
+test_inconsistent_status (test_practice.Database.test_inconsistent_status) ... ok
+test_integrity (test_practice.Database.test_integrity) ... ok
+test_invalid_date (test_practice.Database.test_invalid_date) ... ok
+test_negative_area (test_practice.Database.test_negative_area) ... ok
+test_outside_contract (test_practice.Database.test_outside_contract) ... ok
+test_overload_insert (test_practice.Database.test_overload_insert) ... ok
+test_service_not_in_contract (test_practice.Database.test_service_not_in_contract) ... ok
+test_transaction_rollback (test_practice.Database.test_transaction_rollback) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 0.972s
+
+OK
